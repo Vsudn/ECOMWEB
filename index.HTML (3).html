@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AP Furnitures & Woods | Vadalure</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9f3ed;--surface:#fef8f3;--card:#f3ede8;--bar:#ede7e2;--dark:#331b11;--text:#504440;--accent:#77574a;--muted:#be9788;--ink:#1d1b18;--green:#132516}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.5}
+h1,h2,h3{font-family:'Playfair Display',serif;color:var(--dark);font-weight:600}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1440px;margin:0 auto;padding:0 48px}
+.eyebrow{font-size:11px;letter-spacing:1.1px;text-transform:uppercase;font-weight:700;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 40px;border:0;border-radius:2px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:14px;letter-spacing:.56px;text-transform:uppercase;cursor:pointer}
+.btn-dark{background:var(--dark);color:#fff}.btn-light{background:#fff;color:var(--dark)}
+.img{background:var(--bar);background-size:cover;background-position:center;width:100%}
+.topbar{background:var(--bar);font-size:11px;font-weight:600;color:var(--text);letter-spacing:.88px;text-transform:uppercase}
+.topbar .wrap{height:40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.head{background:var(--surface);box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.head .wrap{display:flex;align-items:center;gap:40px;padding-top:16px;padding-bottom:16px}
+.brand{display:flex;align-items:center;gap:16px;min-width:0}
+.logo{width:128px;height:32px;background:var(--dark);border-radius:2px;flex-shrink:0}
+.brand b{font-family:'Liberation Serif',Georgia,serif;font-size:22px;color:var(--dark);display:block;white-space:nowrap}
+.brand small{font-size:11px;letter-spacing:.55px;color:var(--text);text-transform:uppercase}
+.search{flex:1;max-width:672px}
+.search input{width:100%;height:48px;border:0;border-radius:4px;padding:0 24px;background:#fff;font:inherit;box-shadow:0 1px 4px rgba(0,0,0,.03)}
+.right{display:flex;gap:24px;align-items:center;margin-left:auto}
+.acct{font-size:11px;color:var(--accent);text-transform:uppercase;font-weight:600}
+.cart{background:var(--dark);color:#fff;padding:8px 16px;border-radius:4px;font-size:10px;font-weight:600}
+.nav{background:var(--bg);overflow-x:auto}
+.nav .wrap{display:flex;gap:4px;padding-top:4px;padding-bottom:4px;white-space:nowrap}
+.nav a{padding:8px 16px;font-size:12px;letter-spacing:.72px;text-transform:uppercase;color:var(--text);font-weight:500;border-radius:4px}
+.nav a.on{background:var(--bar);color:var(--ink);font-weight:600}
+.hero{display:grid;grid-template-columns:7fr 5fr;gap:40px;align-items:center;padding:64px 48px;max-width:1440px;margin:0 auto}
+.pill{display:inline-block;background:var(--bar);padding:4px 12px;border-radius:12px;color:var(--text)}
+.hero h1{font-size:56px;line-height:68px;letter-spacing:-1.12px;margin:16px 0}
+.hero p.lead{font-size:18px;line-height:28px;color:var(--text);max-width:576px;margin-bottom:32px}
+.cta{display:flex;gap:16px;flex-wrap:wrap}
+.chips{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:40px}
+.chip{background:var(--card);padding:8px;border-radius:2px}
+.chip span{display:block;font-size:11px;letter-spacing:.88px;text-transform:uppercase;color:var(--accent);font-weight:600}
+.chip strong{font-size:12px;font-weight:500;color:var(--ink)}
+.visual{position:relative}
+.visual .img{height:587px;border-radius:8px;box-shadow:0 20px 25px -5px rgba(0,0,0,.1)}
+.ov{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,255,255,.9);padding:16px;display:flex;justify-content:space-between;align-items:center;border-radius:2px}
+.badge{position:absolute;left:-24px;bottom:-24px;background:var(--dark);color:#fff;padding:16px;max-width:320px;border-radius:2px;font-size:13px}
+.badge small{color:var(--muted);font-size:11px;letter-spacing:.88px;text-transform:uppercase;font-weight:600;display:block}
+.ribbon{background:#ede7e2;padding:10px 0;font-size:11px;font-weight:600;letter-spacing:.55px;text-transform:uppercase;color:var(--text)}
+.ribbon .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+section{padding:64px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;gap:24px;flex-wrap:wrap}
+.sh h2{font-size:40px;letter-spacing:-.4px;margin-top:8px;font-weight:500}
+.sh p{max-width:448px;color:var(--text);font-size:13px}
+.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.tile{background:var(--card);padding:8px;border-radius:4px;box-shadow:0 1px 1px rgba(0,0,0,.05);display:block}
+.tile .img{height:208px;border-radius:2px}
+.tile b{display:block;margin-top:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;color:var(--dark);font-size:14px;padding:0 4px}
+.tile small{display:block;color:var(--text);font-size:13px;padding:0 4px 4px}
+.tile.dark{background:var(--dark)}.tile.dark b{color:#fff}.tile.dark small{color:var(--muted)}
+.prods{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.prod{background:#fff;padding:16px;border-radius:4px;box-shadow:0 1px 1px rgba(0,0,0,.05)}
+.prod .img{height:307px;border-radius:2px}
+.prod .meta{display:flex;justify-content:space-between;font-size:11px;font-weight:700;letter-spacing:.88px;text-transform:uppercase;color:var(--green);margin:16px 0 4px}
+.prod h3{font-size:22px;line-height:30px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dots{display:flex;gap:6px;margin:8px 0}.dots i{width:14px;height:14px;border-radius:50%;border:2px solid var(--dark);display:block}
+.pr{display:flex;justify-content:space-between;align-items:center;font-weight:700}
+.pr s{font-weight:400;color:var(--text);font-size:13px;margin-left:8px}
+.add{background:var(--card);border:0;padding:8px;cursor:pointer;font-size:14px}
+.pill-btn{padding:4px 12px;border-radius:12px;background:var(--card);color:var(--text);font-size:11px;font-weight:600;letter-spacing:.88px;text-transform:uppercase}
+.promo{background:var(--dark);color:#fff;border-radius:4px;padding:64px;max-width:1184px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}
+.promo h2{color:#fff;font-size:44px;line-height:1.15}
+.promo p{color:var(--muted);font-size:16px;margin:16px 0 24px}
+.drops{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.drop .img{height:640px;border-radius:2px;position:relative}
+.drop .tag{position:absolute;left:12px;top:12px;background:#fff;font-size:10px;font-weight:600;padding:4px 8px;letter-spacing:1px;text-transform:uppercase}
+.drop small{display:block;margin-top:16px;color:var(--accent);font-size:11px;letter-spacing:1px;font-weight:700;text-transform:uppercase}
+.drop h3{font-size:22px;margin:4px 0}.drop p{color:var(--text);font-size:13px}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.col{background:#fff;padding:24px;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.col .ico{width:48px;height:48px;background:var(--card);margin-bottom:24px;border-radius:2px}
+.col h3{font-size:20px;margin-bottom:12px}.col p{color:var(--text);font-size:13px}
+.bp{background:#fff;border-radius:4px;display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:72px 64px;box-shadow:0 1px 4px rgba(0,0,0,.05);max-width:1184px;margin:0 auto;align-items:center}
+.bp h2{font-size:40px;margin:12px 0}
+.bp p{color:var(--text);margin-bottom:24px}
+.timber{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 24px}
+.timber div{background:var(--card);padding:10px;font-size:12px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev{background:#fff;padding:24px;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.stars{color:var(--accent);letter-spacing:3px;font-size:14px}
+.rev p{font-family:'Playfair Display',serif;font-size:17px;color:var(--dark);font-style:italic;margin:16px 0 24px;line-height:1.5}
+.rev b{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:var(--accent)}
+.news{background:#fff;border-radius:4px;max-width:1184px;margin:0 auto;padding:56px 64px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.news form{display:flex}
+.news input{flex:1;height:48px;padding:0 24px;border:1px solid #e5ddd6;border-right:0;font:inherit;min-width:0}
+.news button{height:48px;padding:0 24px;background:var(--dark);color:#fff;border:0;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:12px;letter-spacing:.5px;text-transform:uppercase;cursor:pointer}
+footer{background:var(--dark);color:var(--muted);padding:64px 0 24px;font-size:13px}
+.fg{display:grid;grid-template-columns:2fr 1.4fr 1.4fr 1.4fr;gap:32px}
+footer h4{color:#fff;font-size:12px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+footer h3{color:#fff;font-size:22px;margin-bottom:12px}
+footer ul{list-style:none}footer li{margin-bottom:10px}
+.copy{border-top:1px solid #4b3025;margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;font-size:11px;flex-wrap:wrap;gap:12px}
+@media(max-width:1100px){.prods{grid-template-columns:repeat(2,1fr)}.tiles{grid-template-columns:repeat(3,1fr)}.drops,.cols{grid-template-columns:repeat(2,1fr)}.fg{grid-template-columns:1fr 1fr}.hero{grid-template-columns:1fr}.reviews{grid-template-columns:1fr}}
+@media(max-width:700px){.wrap{padding:0 20px}.hero{padding:40px 20px}.hero h1{font-size:38px;line-height:46px}.chips{grid-template-columns:1fr 1fr}.right,.acct{display:none}.tiles,.prods,.drops,.cols,.promo,.bp,.news,.fg{grid-template-columns:1fr}.promo,.bp,.news{padding:32px 24px}.visual .img{height:380px}.badge{position:static;margin-top:12px}.ov{position:static;margin-top:-60px}.sh h2{font-size:30px}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span>Deliver to: Vadalure 607 303 / Chennai 600 001</span>
+  <span>Showroom Mon–Sat: 9:00 AM – 8:30 PM</span>
+  <span>Bespoke Timber Line: +91 8870220947</span>
+  <span>WhatsApp Enquiry &nbsp;|&nbsp; EN / தமிழ்</span>
+</div></div>
+
+<header class="head"><div class="wrap">
+  <div class="brand">
+    <div class="logo"></div>
+    <div><b>AP Furnitures &amp; Woods</b><small>Vadalure Artisanal Heritage • Est. 1984</small></div>
+  </div>
+  <div class="search"><input placeholder="Search furniture, solid teak beds, dining sets, timber..."></div>
+  <div class="right">
+    <div class="acct">Namaskaram<br>Account</div>
+    <div class="cart">CART (2 ITEMS)<br>₹48,500</div>
+  </div>
+</div>
+<nav class="nav"><div class="wrap">
+  <a class="on" href="#">Home</a><a href="#categories">Living Room</a><a href="#categories">Bedroom</a><a href="#categories">Dining Room</a><a href="#categories">Office Furniture</a><a href="#categories">Wooden Furniture</a><a href="#custom">Custom Furniture</a><a href="#best">Sale</a><a href="#">About Us</a><a href="#">Contact Us</a><a href="admin.html" style="margin-left:auto;color:var(--accent);font-size:11px">Admin Portal</a>
+</div></nav>
+</header>
+
+<main>
+<div class="hero">
+  <div>
+    <span class="pill eyebrow">Vadalure Master Atelier • Est. 1984</span>
+    <h1>Furniture That Makes Your House a Home</h1>
+    <p class="lead">Discover timeless wooden craftsmanship, premium furniture, and beautiful designs made for your lifestyle. Hand-planed Nilambur teak and aged rosewood tailored for South Indian architectural living.</p>
+    <div class="cta"><a class="btn btn-dark" href="#best">Shop Furniture</a><a class="btn btn-light" href="#categories">Explore Our Collection</a></div>
+    <div class="chips">
+      <div class="chip"><span>Timber</span><strong>100% Solid Teak</strong></div>
+      <div class="chip"><span>Joinery</span><strong>Mortise &amp; Tenon</strong></div>
+      <div class="chip"><span>Warranty</span><strong>10-Year Timber</strong></div>
+      <div class="chip"><span>Delivery</span><strong>Across South India</strong></div>
+    </div>
+  </div>
+  <div class="visual">
+    <div class="img" style="background-image:url(assets/hero-diwan.jpg)"></div>
+    <div class="ov"><div><span class="eyebrow" style="font-size:10px">Featured Suite</span><div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--dark)">Kumbakonam Teak Diwan</div></div><b>₹62,000</b></div>
+    <div class="badge"><small>Zero Engineered MDF</small>Genuine Seasoned Timber From Tamil Nadu &amp; Kerala</div>
+  </div>
+</div>
+<div class="ribbon"><div class="wrap">
+  <span>Quality Craftsmanship</span><span>•</span><span>100% Solid Teak &amp; Rosewood</span><span>•</span><span>Direct Delivery Across South India</span><span>•</span><span>10-Year Timber Warranty</span>
+</div></div>
+
+<section id="categories"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow">Curated Catalog</span><h2>Shop by Living Domain</h2></div>
+  <p>Engineered with heirloom joinery, our collections bring the quiet gravitas of solid wood to modern South Indian residences.</p></div>
+  <div class="tiles" id="tiles"></div>
+</div></section>
+
+<section id="best" style="padding-top:0"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow">Vadalure Masterpieces</span><h2>Acclaimed Best Sellers</h2></div>
+  <div style="display:flex;gap:8px"><span class="pill-btn" style="background:var(--dark);color:#fff">All Pieces</span><span class="pill-btn">Teak Classics</span><span class="pill-btn">Pooja Mandir</span></div></div>
+  <div class="prods" id="prods"></div>
+</div></section>
+
+<section style="padding-top:0"><div class="promo">
+  <div>
+    <span class="eyebrow" style="color:var(--muted)">Limited Season Offer</span>
+    <h2>Upgrade Your Home with Timeless Wooden Furniture</h2>
+    <p>Experience the warmth of seasoned Nilambur timber. Enjoy up to 25% savings on complete living room suites, king bedroom suites, and 6-seater dining sets with complimentary Tamil Nadu white-glove assembly.</p>
+    <a class="btn btn-light" href="#best">Shop the Sale</a>
+  </div>
+  <div class="img" style="height:320px;border-radius:4px;background-image:url(assets/promo.jpg);background-color:#4b3025"></div>
+</div></section>
+
+<section id="new"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow">Studio Drops</span><h2>New In The Atelier</h2></div></div>
+  <div class="drops" id="drops"></div>
+</div></section>
+
+<section style="background:var(--bg)"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow">Why Choose Us</span><h2>Built to Last Generations</h2></div>
+  <p>Solid craft, transparent service, from the forest to your living room.</p></div>
+  <div class="cols">
+    <div class="col"><div class="ico"></div><h3>Seasoned Hardwoods</h3><p>Grade-A plantation teak and sustainably sourced rosewood, sun-cured and kiln-dried to less than 10% moisture to eliminate seasonal warping.</p></div>
+    <div class="col"><div class="ico"></div><h3>Master Artisanal Joinery</h3><p>No cheap nails or flimsy staples. We employ interlocking mortise &amp; tenon carpentry and classic dovetail joinery that endure for a lifetime.</p></div>
+    <div class="col"><div class="ico"></div><h3>Secure UPI / Cards / EMI</h3><p>Encrypted payment gateway with transparent GST billing. Flexible zero-cost 3, 6, and 12-month EMI tenures through major Indian banks.</p></div>
+    <div class="col"><div class="ico"></div><h3>White-Glove Assembly</h3><p>Our specialized furniture carriage fleet transports your pieces directly to your room of choice, assembled and leveled by master carpenters.</p></div>
+  </div>
+</div></section>
+
+<section id="custom"><div class="wrap"><div class="bp">
+  <div>
+    <span class="eyebrow">Custom Furniture Blueprint</span>
+    <h2>Your Vision. Our Craftsmanship.</h2>
+    <p>Cannot find exact dimensions for your ancestral hall or modern flat? Share your blueprints, architectural layouts, or hand-drawn sketches. Choose your wood grain, stain, polish sheen, and upholstery fabrics.</p>
+    <span class="eyebrow">Available Raw Timber Species:</span>
+    <div class="timber"><div>Nilambur Teak</div><div>Rosewood</div><div>Sheesham</div><div>Jackfruit</div></div>
+    <a class="btn btn-dark" href="#">Start Custom Request</a>
+  </div>
+  <div class="img" style="height:420px;border-radius:4px;background-image:url(assets/custom.jpg);background-color:#4b3025"></div>
+</div></div></section>
+
+<section><div class="wrap">
+  <div class="sh"><div><span class="eyebrow">Client Testimonials</span><h2>From Our Homes to Yours</h2></div></div>
+  <div class="reviews">
+    <div class="rev"><div class="stars">★★★★★</div><p>"We ordered the Chettinad Carved King Bed and a custom 8-seater dining table for our villa in ECR, Chennai. The weight of the teak wood and the smooth hand-rubbed finish is miles ahead of showroom particle boards. Truly generational."</p><b>ECR Villa Owner, Chennai</b></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>"Delivered straight to Indiranagar, Bangalore without a single scratch. Their assembly crew leveled the bookshelf on uneven heritage flooring and gave us advice on timber wax maintenance. Phenomenal service."</p><b>Indiranagar Client, Bangalore</b></div>
+    <div class="rev"><div class="stars">★★★★★</div><p>"The Temple Pooja Mandir in pure teak brought genuine sanctity into our ancestral house in Trichy. The carving details of the Gopuram and brass bells reflect absolute mastery. Highly recommended!"</p><b>Trichy Family</b></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="news">
+  <div><span class="eyebrow">Newsletter</span><h2 style="font-size:32px;margin-top:8px">Join the Atelier &amp; Get an Instant 5% Code</h2><p style="color:var(--text);margin-top:12px">Receive new studio drops, seasonal savings and workshop invitations.</p></div>
+  <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscribed ✓'">
+    <input type="email" required placeholder="Enter your email address..."><button>Subscribe</button>
+  </form>
+</div></div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fg">
+    <div><h3>AP Furnitures &amp; Woods</h3><p>Rooted in Vadalure, Tamil Nadu, we engineer heirloom-grade furniture using time-honored joinery and ethically sourced timber. Each artifact embodies South Indian artisanal precision, seasoned durability, and architectural luxury.</p>
+      <p style="margin-top:16px">Main Road, Maruvai Village, Vadalure, Cuddalore District, Tamil Nadu 607 303, India</p><p>+91 8870220947</p></div>
+    <div><h4>Collections</h4><ul><li>Solid Teak Sofas</li><li>King Size Storage Beds</li><li>6-Seater Rosewood Dining</li><li>Artisanal Study Desks</li><li>Puja Mandapams &amp; Swings</li><li>Bespoke Wardrobe Suites</li></ul></div>
+    <div><h4>Timber &amp; Services</h4><ul><li>Timber Sourcing &amp; Moisture Grading</li><li>Custom Wood Order Blueprint</li><li>Mortise &amp; Tenon Joinery Guide</li><li>Architect &amp; Interior Consultation</li><li>Wood Maintenance &amp; Patina Care</li><li>Showroom Dealer Inquiries</li></ul></div>
+    <div><h4>Customer Care</h4><ul><li>Delivery &amp; Assembly Policy</li><li>Track Furniture Consignment</li><li>Lifetime Termite Guarantee</li><li>Returns &amp; Inspection Notice</li><li>Vadalure Workshop Tour Bookings</li></ul>
+      <h4 style="margin-top:24px">Verified Secured Payments</h4><p>UPI · Visa · Mastercard · EMI</p></div>
+  </div>
+  <div class="copy"><span>© 2026 AP Furnitures &amp; Woods. All rights reserved.</span><span>Privacy · Terms · Shipping</span></div>
+</div></footer>
+
+<script>
+const categories=[["Sofas & Armchairs","24 Artisanal Designs"],["Beds & Headboards","King & Queen Storage"],["Solid Wood Wardrobes","18 Modular Configurations"],["Teak Dining Sets","4, 6 & 8 Seaters"],["Coffee Tables","Live Edge & Inlay"],["TV Consoles","Acoustic & Media Suites"],["Study & Office","Ergonomic Wooden Desks"],["Carved Wooden Doors","Heritage Grand Entrances"],["Bookshelves","Brass Inlay & Open Etageres"]];
+const products=[["Chettinad Carved Teak","Solid Teak",4.9,84,64999,78000],["Malabar Teak 6-Seater…","Malabar Teak",5.0,62,52400,59900],["Vadalur Hand-planed…","Aged Walnut",4.8,39,18500,22000],["Cane & Teakwood…","Cane + Teak",4.9,53,24900,29000],["Solid Sheesham 3-Door","Sheesham",4.7,41,46000,54000],["Artisanal Bookshelf…","Brass Inlay",4.9,28,29000,35000],["Heritage Temple Pooja…","Devotional Woodcraft",5.0,96,38000,44500],["Minimalist Executive…","Executive Timber",4.8,34,32500,39000]];
+const drops=[["Heirloom Jhula","Thanjavur Teak Swing","Pure Grade-A teak plank with forged brass heavy ceiling hooks."],["Entryway Credenza","Nagercoil Rosewood Cabinet","Natural breathable slats protect luxury footwear with aromatic cedar interior."],["Dining & Bistro","Vadalur Round Pedestal Table","Fluted solid timber drum pedestal with chamfered circular tabletop."],["Bedroom Suite","Maruvai Teak Nightstand","Dovetailed soft-closing drawer with subtle organic grain alignment."]];
+const inr=n=>"₹"+n.toLocaleString("en-IN");
+document.getElementById("tiles").innerHTML=categories.map((c,i)=>`<a class="tile${i===8?' dark':''}" href="#"><div class="img" style="background-image:url(assets/cat-${i+1}.jpg)"></div><b>${c[0]}</b><small>${c[1]}</small></a>`).join("")+`<a class="tile dark" href="#"><div class="img" style="background:#4b3025"></div><b>Custom-Made Pieces</b><small>Blueprinted to your space</small></a>`;
+document.getElementById("prods").innerHTML=products.map((p,i)=>`<div class="prod"><div class="img" style="background-image:url(assets/prod-${i+1}.jpg)"></div><div class="meta"><span>${p[1]}</span><span>★ ${p[2].toFixed(1)} (${p[3]})</span></div><h3>${p[0]}</h3><div class="dots"><i style="background:#78350f"></i><i style="background:#1c1917"></i></div><div class="pr"><span>${inr(p[4])}<s>${inr(p[5])}</s></span><button class="add" aria-label="Add to cart">🛒</button></div></div>`).join("");
+document.getElementById("drops").innerHTML=drops.map((d,i)=>`<div class="drop"><div class="img" style="background-image:url(assets/drop-${i+1}.jpg)"><span class="tag">New</span></div><small>${d[0]}</small><h3>${d[1]}</h3><p>${d[2]}</p></div>`).join("");
+</script>
+</body>
+</html>
